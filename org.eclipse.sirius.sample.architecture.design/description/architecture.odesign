@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="architecture" version="12.0.0.2017041100">
+  <ownedViewpoints name="architecture">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="architectures Diagram" domainClass="architecture.AllElements" enablePopupBars="true">
+      <metamodel href="http://www.example.org/architecture#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Component" semanticCandidatesExpression="feature:component" domainClass="architecture.Component">
+          <style xsi:type="style:WorkspaceImageDescription" iconPath="/org.eclipse.sirius.sample.architecture.design/icons/Component.gif" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.sample.architecture.design/images/boxBlue.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="componentToComponent" sourceMapping="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@nodeMappings[name='Component'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']/@subNodeMappings[name='Component']" targetMapping="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@nodeMappings[name='Component'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']/@subNodeMappings[name='Component']" targetFinderExpression="feature:dependence">
+          <style lineStyle="dot" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="componentToSystem" sourceMapping="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@nodeMappings[name='Component'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']/@subNodeMappings[name='Component']" targetMapping="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']" targetFinderExpression="feature:ComponentDependence">
+          <style lineStyle="dot" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="SystemToSystem" sourceMapping="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']" targetMapping="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']" targetFinderExpression="feature:dependence">
+          <style lineStyle="dot" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="SystemToComponent" sourceMapping="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']" targetMapping="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']/@subNodeMappings[name='Component'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@nodeMappings[name='Component']" targetFinderExpression="feature:SystemDependence">
+          <style lineStyle="dot" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="System" semanticCandidatesExpression="feature:system" domainClass="architecture.System">
+          <subNodeMappings name="Component" semanticCandidatesExpression="feature:component" domainClass="architecture.Component">
+            <style xsi:type="style:WorkspaceImageDescription" iconPath="/org.eclipse.sirius.sample.architecture.design/icons/Component.gif" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.sample.architecture.design/images/boxBlue.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" iconPath="/org.eclipse.sirius.sample.architecture.design/icons/System.gif" sizeComputationExpression="10" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.eclipse.sirius.sample.architecture.design/images/System.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createComponent" label="Component" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']/@subNodeMappings[name='Component'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@nodeMappings[name='Component']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="architecture::Component" referenceName="component">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Component'+container.members->filter(architecture::Component)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="dependence" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='componentToComponent'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='componentToSystem'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='SystemToComponent'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='SystemToSystem']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="dependence" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="System" forceRefresh="true" containerMappings="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="architecture::System" referenceName="system">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'System'+container.members->filter(architecture::System)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.eclipse.sirius.sample.architecture.design.Services"/>
+  </ownedViewpoints>
+</description:Group>
