@@ -182,6 +182,22 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2943usxrEeeZINGMvCjLwQ" id="(0.13333333333333333,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2943u8xrEeeZINGMvCjLwQ" id="(0.5,1.0)"/>
         </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_9dn7QMxrEeeZINGMvCjLwQ" type="4001" element="_9dkQ4MxrEeeZINGMvCjLwQ" source="_8xSZsMxrEeeZINGMvCjLwQ" target="_n20x8MxrEeeZINGMvCjLwQ">
+          <children xmi:type="notation:Node" xmi:id="_9doiUMxrEeeZINGMvCjLwQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9doiUcxrEeeZINGMvCjLwQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_9doiUsxrEeeZINGMvCjLwQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9doiU8xrEeeZINGMvCjLwQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_9doiVMxrEeeZINGMvCjLwQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9doiVcxrEeeZINGMvCjLwQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_9dn7QcxrEeeZINGMvCjLwQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_9dn7QsxrEeeZINGMvCjLwQ" fontName="Microsoft YaHei UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9dn7Q8xrEeeZINGMvCjLwQ" points="[0, 0, -444, -65]$[444, 65, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9doiVsxrEeeZINGMvCjLwQ" id="(1.0,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9doiV8xrEeeZINGMvCjLwQ" id="(0.0,0.5666666666666667)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_0qWZsMxpEeeVUOHPr5RngA" name="Port">
@@ -213,7 +229,7 @@
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_8HyJsMxrEeeZINGMvCjLwQ" name="Component" width="-1" height="-1" resizeKind="NSEW">
         <target xmi:type="architecture:Component" href="example.architecture#//@system.0/@component.0"/>
         <semanticElements xmi:type="architecture:Component" href="example.architecture#//@system.0/@component.0"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_8xP9cMxrEeeZINGMvCjLwQ" name="Port" width="3" height="3" resizeKind="NSEW">
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_8xP9cMxrEeeZINGMvCjLwQ" name="Port" outgoingEdges="_9dkQ4MxrEeeZINGMvCjLwQ" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="architecture:Port" href="example.architecture#//@system.0/@component.0/@portOfComponent.0"/>
           <semanticElements xmi:type="architecture:Port" href="example.architecture#//@system.0/@component.0/@portOfComponent.0"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_8xP9ccxrEeeZINGMvCjLwQ" showIcon="false" labelAlignment="LEFT" borderColor="114,159,207" labelPosition="node" color="255,255,255">
@@ -249,7 +265,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_ngGUAMxrEeeZINGMvCjLwQ" name="Component" width="10" height="10" resizeKind="NSEW">
       <target xmi:type="architecture:Component" href="example.architecture#//@component.1"/>
       <semanticElements xmi:type="architecture:Component" href="example.architecture#//@component.1"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_n2xHkMxrEeeZINGMvCjLwQ" name="Port" incomingEdges="_oVN-IMxrEeeZINGMvCjLwQ" width="3" height="3" resizeKind="NSEW">
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_n2xHkMxrEeeZINGMvCjLwQ" name="Port" incomingEdges="_oVN-IMxrEeeZINGMvCjLwQ _9dkQ4MxrEeeZINGMvCjLwQ" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="architecture:Port" href="example.architecture#//@component.1/@portOfComponent.0"/>
         <semanticElements xmi:type="architecture:Port" href="example.architecture#//@component.1/@portOfComponent.0"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_n2xHkcxrEeeZINGMvCjLwQ" showIcon="false" labelAlignment="LEFT" borderColor="114,159,207" labelPosition="node" color="255,255,255">
@@ -301,6 +317,14 @@
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_290mQsxrEeeZINGMvCjLwQ"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.sirius.sample.architecture.design/description/architecture.odesign#//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='portOfSysToSys']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_9dkQ4MxrEeeZINGMvCjLwQ" sourceNode="_8xP9cMxrEeeZINGMvCjLwQ" targetNode="_n2xHkMxrEeeZINGMvCjLwQ">
+      <target xmi:type="architecture:Port" href="example.architecture#//@system.0/@component.0/@portOfComponent.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_9dkQ4cxrEeeZINGMvCjLwQ" lineStyle="dot" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.sirius.sample.architecture.design/description/architecture.odesign#//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='PortInSystemToPort']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_9dkQ4sxrEeeZINGMvCjLwQ"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.sirius.sample.architecture.design/description/architecture.odesign#//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='PortInSystemToPort']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.eclipse.sirius.sample.architecture.design/description/architecture.odesign#//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_Oa1H5r1FEeeCkuIaWx9zgg"/>

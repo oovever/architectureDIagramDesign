@@ -8,7 +8,7 @@
   </component>
   <system name="Port">
     <component name="Component">
-      <portOfComponent name="Port"/>
+      <portOfComponent name="Port" dependence="//@component.1/@portOfComponent.0"/>
     </component>
     <portOfComponent name="Port"/>
     <portOfComponent name="Port"/>
