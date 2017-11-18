@@ -74,6 +74,13 @@
           </style>
         </edgeMappings>
         <containerMappings name="System" semanticCandidatesExpression="feature:system" domainClass="architecture.System">
+          <borderedNodeMappings name="Port" semanticCandidatesExpression="feature:portOfComponent" domainClass="architecture::Port">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </borderedNodeMappings>
           <subNodeMappings name="Component" semanticCandidatesExpression="feature:component" synchronizationLock="true" domainClass="architecture::Component">
             <borderedNodeMappings name="Port" semanticCandidatesExpression="feature:portOfComponent" domainClass="architecture::Port">
               <style xsi:type="style:SquareDescription" showIcon="false" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
@@ -126,7 +133,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Port" nodeMappings="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@nodeMappings[name='Component']/@borderedNodeMappings[name='Port'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']/@subNodeMappings[name='Component']/@borderedNodeMappings[name='Port']" iconPath="/org.eclipse.sirius.sample.architecture.design/icons/Port.gif">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Port" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@nodeMappings[name='Component']/@borderedNodeMappings[name='Port'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']/@subNodeMappings[name='Component']/@borderedNodeMappings[name='Port'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']/@borderedNodeMappings[name='Port']" iconPath="/org.eclipse.sirius.sample.architecture.design/icons/Port.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
