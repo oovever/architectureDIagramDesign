@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <architecture:AllElements xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:architecture="http://www.example.org/architecture">
   <component name="Component">
-    <portOfComponent name="Port" dependence="//@component.3/@portOfComponent.0"/>
+    <portOfComponent name="Port" dependence="//@component.1/@portOfComponent.0"/>
+  </component>
+  <component name="Component">
+    <portOfComponent name="Port" dependence="//@system.0/@component.0/@portOfComponent.0"/>
   </component>
   <component name="Component">
     <portOfComponent name="Port"/>
   </component>
-  <component name="Component"/>
-  <component name="Component">
-    <portOfComponent name="Port" dependence="//@component.1/@portOfComponent.0"/>
-  </component>
-  <system name="System"/>
+  <system name="System">
+    <component name="Component">
+      <portOfComponent name="Port" dependence="//@component.2/@portOfComponent.0"/>
+    </component>
+  </system>
 </architecture:AllElements>
