@@ -5,6 +5,13 @@
       <metamodel href="http://www.example.org/architecture#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="Component" semanticCandidatesExpression="feature:component" domainClass="architecture.Component">
+          <borderedNodeMappings name="Port" semanticCandidatesExpression="feature:portOfComponent" domainClass="architecture::Port">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </borderedNodeMappings>
           <style xsi:type="style:WorkspaceImageDescription" iconPath="/org.eclipse.sirius.sample.architecture.design/icons/Component.gif" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.sample.architecture.design/images/boxBlue.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -42,8 +49,23 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="System" semanticCandidatesExpression="feature:system" domainClass="architecture.System">
-          <subNodeMappings name="Component" semanticCandidatesExpression="feature:component" domainClass="architecture.Component">
+        <edgeMappings name="PortToPort" sourceMapping="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@nodeMappings[name='Component']/@borderedNodeMappings[name='Port']" targetMapping="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@nodeMappings[name='Component']/@borderedNodeMappings[name='Port']" targetFinderExpression="feature:dependence">
+          <style lineStyle="dot" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="System" semanticCandidatesExpression="feature:system" domainClass="architecture.System" childrenPresentation="VerticalStack">
+          <subNodeMappings name="Component" semanticCandidatesExpression="service:" synchronizationLock="true" domainClass="architecture::Component">
+            <borderedNodeMappings name="Port" semanticCandidatesExpression="feature:portOfComponent" domainClass="architecture::Port">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </borderedNodeMappings>
             <style xsi:type="style:WorkspaceImageDescription" iconPath="/org.eclipse.sirius.sample.architecture.design/icons/Component.gif" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.sample.architecture.design/images/boxBlue.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -55,7 +77,7 @@
           </style>
         </containerMappings>
         <toolSections name="Tools">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="createComponent" label="Component" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']/@subNodeMappings[name='Component'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@nodeMappings[name='Component']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createComponent" label="Component" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@containerMappings[name='System']/@subNodeMappings[name='Component'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@nodeMappings[name='Component']" iconPath="/org.eclipse.sirius.sample.architecture.design/icons/Component.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -66,7 +88,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="dependence" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='componentToComponent'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='componentToSystem'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='SystemToComponent'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='SystemToSystem']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="dependence" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='componentToComponent'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='componentToSystem'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='SystemToComponent'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='SystemToSystem'] //@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@edgeMappings[name='PortToPort']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -84,6 +106,17 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="architecture::System" referenceName="system">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'System'+container.members->filter(architecture::System)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Port" nodeMappings="//@ownedViewpoints[name='architecture']/@ownedRepresentations[name='architectures%20Diagram']/@defaultLayer/@nodeMappings[name='Component']/@borderedNodeMappings[name='Port']" iconPath="/org.eclipse.sirius.sample.architecture.design/icons/Port.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="architecture::Port" referenceName="portOfComponent">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Port'+container.members->filter(architecture::Port)->size()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
